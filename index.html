@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AnimeVerse</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
   <header>
-    <h1>🌸 AnimeVerse</h1>
-    <input type="text" id="search" placeholder="Search anime..." />
+    <h1>AnimeVerse</h1>
+    <div class="auth-buttons">
+      <button id="loginBtn">Login with Google</button>
+      <button id="logoutBtn" style="display:none;">Logout</button>
+      <button id="adminTab" style="display:none;">Seed Anime (Admin)</button>
+    </div>
     <nav>
       <button id="homeTab">Home</button>
-      <button id="watchTab">Watch</button>
-      <button id="chatTab">Chat</button>
-      <button id="adminTab" style="display:none;">Admin</button>
-      <button id="logoutBtn" style="display:none;">Logout</button>
-      <button id="loginBtn">Login</button>
+      <button id="fanArtTab">Fan Art</button>
     </nav>
   </header>
 
   <main>
-    <section id="animeList"></section>
-    <section id="animeDetail" class="hidden"></section>
-    <section id="chatSection" class="hidden">
-      <h2>Community Chat</h2>
-      <div id="messages"></div>
-      <input id="chatInput" placeholder="Type a message..." />
-      <button id="sendBtn">Send</button>
+    <!-- Search Section -->
+    <section id="searchSection">
+      <input type="text" id="search" placeholder="Search anime...">
     </section>
-    <section id="watchSection" class="hidden">
+
+    <!-- Anime List -->
+    <section id="animeList" class="anime-grid"></section>
+
+    <!-- Anime Detail -->
+    <section id="animeDetail" class="hidden"></section>
+
+    <!-- Fan Art Section -->
+    <section id="fanArtSection" class="hidden">
+      <h2>Fan Art Gallery</h2>
+      <p>Upload your artwork! Moderators must approve it before public display.</p>
+      <form id="fanArtForm">
+        <input type="text" id="fanArtTitle" placeholder="Title" required>
+        <input type="url" id="fanArtUrl" placeholder="Image URL" required>
+        <button type="submit">Submit Fan Art</button>
+      </form>
+      <div id="fanArtGallery"></div>
+    </section>
+
+    <!-- Watch Section -->
+    <section id="watchSection">
       <h2>Watch Anime</h2>
-      <p>
-        Enjoy your favorite anime on trusted streaming platforms:
-      </p>
-      <ul>
-        <li><a href="https://aniwatchtv.to/" target="_blank">AniWatch</a></li>
-        <li><a href="https://www.crunchyroll.com/" target="_blank">Crunchyroll</a></li>
-        <li><a href="https://www.funimation.com/" target="_blank">Funimation</a></li>
-      </ul>
+      <p>For full episodes, visit <a href="https://aniwatchtv.to/" target="_blank">AniWatch</a></p>
+    </section>
+
+    <!-- Chat Section -->
+    <section id="chatSection">
+      <h2>Chat with Fans</h2>
+      <div id="messages"></div>
+      <form id="messageForm">
+        <input type="text" id="message" placeholder="Type a message..." required>
+        <button type="submit">Send</button>
+      </form>
     </section>
   </main>
+
+  <footer>
+    <p>AnimeVerse &copy; 2025. All content for discussion purposes.</p>
+  </footer>
 
   <script type="module" src="scripts.js"></script>
 </body>
