@@ -3,45 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnimeVerse</title>
+  <title>AnimeVerse - 1000+ Animes</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3297/3297956.png">
 </head>
 <body>
+  <!-- Auth Modal -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Welcome to AnimeVerse!</h2>
+      <p>Discover 1000+ animes with detailed information</p>
+      <button id="googleLoginBtn">Sign in with Google</button>
+    </div>
+  </div>
+
+  <!-- Username Modal -->
+  <div id="usernameModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Choose Your Username</h2>
+      <input type="text" id="usernameInput" placeholder="Enter your username" maxlength="20">
+      <button id="setUsernameBtn">Continue</button>
+    </div>
+  </div>
+
   <header>
-    <h1>AnimeVerse</h1>
-    <input type="text" id="search" placeholder="Search anime...">
-    <button id="loginBtn">Login with Google</button>
-    <button id="logoutBtn" style="display:none;">Logout</button>
-    <button id="adminTab" style="display:none;">Admin</button>
+    <div class="header-left">
+      <h1 class="logo">AnimeVerse</h1>
+      <nav>
+        <button class="nav-btn active" data-page="home">Home</button>
+        <button class="nav-btn" data-page="chat">Global Chat</button>
+        <button class="nav-btn" data-page="movies">Movies</button>
+        <button class="nav-btn" data-page="rules">Rules</button>
+      </nav>
+    </div>
+    
+    <div class="header-right">
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search 1000+ animes...">
+        <button id="searchBtn">🔍</button>
+      </div>
+      <div id="userSection">
+        <span id="userWelcome"></span>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section id="animeList" class="anime-grid">
-      <!-- Anime cards appear here dynamically -->
+    <!-- Home Page -->
+    <section id="homePage" class="page active">
+      <div class="hero-section">
+        <h2>Discover 1000+ Animes</h2>
+        <p>Complete database with seasons, episodes, movies, and summaries</p>
+        <div class="stats">
+          <span>🎬 1000+ Animes</span>
+          <span>📺 50,000+ Episodes</span>
+          <span>🎥 500+ Movies</span>
+        </div>
+      </div>
+
+      <div class="anime-grid-container">
+        <h3>Popular Animes</h3>
+        <div id="animeList" class="anime-grid">
+          <!-- Anime cards appear here dynamically -->
+        </div>
+      </div>
     </section>
 
-    <section id="animeDetail" class="hidden">
-      <!-- Detailed anime info appears here dynamically -->
+    <!-- Anime Detail Page -->
+    <section id="animeDetailPage" class="page hidden">
+      <div id="animeDetail">
+        <!-- Detailed anime info appears here dynamically -->
+      </div>
     </section>
 
-    <section id="chatSection">
-      <h2>Chat</h2>
-      <div id="messages"></div>
-      <form id="messageForm">
-        <input type="text" id="message" placeholder="Type a message..." required>
-        <button type="submit">Send</button>
-      </form>
+    <!-- Episode Detail Page -->
+    <section id="episodeDetailPage" class="page hidden">
+      <div id="episodeDetail">
+        <!-- Episode details appear here dynamically -->
+      </div>
     </section>
 
-    <section id="fanArtPage">
-      <h2>Fan Art</h2>
-      <input type="file" id="fanArtFile">
-      <button id="uploadFanArtBtn">Upload Fan Art</button>
-      <div id="fanArtGallery"></div>
+    <!-- Chat Page -->
+    <section id="chatPage" class="page hidden">
+      <div class="chat-container">
+        <h2>Global Chat</h2>
+        <div class="chat-rules">
+          <p>🚫 No spoilers | ✅ Be respectful | 🎮 Have fun!</p>
+        </div>
+        <div id="messages" class="messages-container"></div>
+        <form id="messageForm" class="message-form">
+          <input type="text" id="messageInput" placeholder="Type your message..." required>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Movies Page -->
+    <section id="moviesPage" class="page hidden">
+      <div class="hero-section">
+        <h2>Anime Movies Collection</h2>
+        <p>500+ movies from your favorite anime series</p>
+      </div>
+      <div id="moviesList" class="movies-grid">
+        <!-- Movies appear here dynamically -->
+      </div>
+    </section>
+
+    <!-- Rules Page -->
+    <section id="rulesPage" class="page hidden">
+      <div class="rules-container">
+        <h2>Community Rules</h2>
+        <div class="rules-list">
+          <div class="rule-item">
+            <h3>🚫 No Spoilers</h3>
+            <p>Don't spoil new episodes for others. Use spoiler tags when discussing recent content.</p>
+          </div>
+          <div class="rule-item">
+            <h3>✅ Be Respectful</h3>
+            <p>Respect all members and their opinions. No harassment or hate speech.</p>
+          </div>
+          <div class="rule-item">
+            <h3>🎮 Keep it Fun</h3>
+            <p>This is a community for anime lovers. Keep discussions positive and engaging.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script type="module" src="scripts.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
