@@ -1,6 +1,5 @@
-// animeDatabase.js - Complete 1000+ Anime Database
+// animeDatabase.js - WORKING VERSION (First 20 animes)
 export const animeDatabase = {
-  // Popular Shonen (50 entries)
   "demon-slayer": {
     id: "demon-slayer",
     title: "Demon Slayer: Kimetsu no Yaiba",
@@ -18,13 +17,9 @@ export const animeDatabase = {
         title: "Demon Slayer: Kimetsu no Yaiba",
         episodes: 26,
         description: "Tanjiro Kamado's journey begins as he joins the Demon Slayer Corps to find a cure for his sister Nezuko while battling demons.",
-        trailer: "https://www.youtube.com/embed/VQGCKyvzIM4",
         episodesList: [
           { episode: 1, title: "Cruelty", summary: "Tanjiro returns home to find his family slaughtered and his sister turned into a demon." },
-          { episode: 2, title: "Trainer Sakonji Urokodaki", summary: "Tanjiro meets Giyu Tomioka and begins training under Sakonji Urokodaki." },
-          { episode: 3, title: "Sabito and Makomo", summary: "Tanjiro undergoes rigorous training with Sabito and Makomo to prepare for Final Selection." },
-          { episode: 4, title: "Final Selection", summary: "Tanjiro faces demons in Final Selection to become an official Demon Slayer." },
-          { episode: 5, title: "My Own Steel", summary: "Tanjiro gets his Nichirin Blade and meets the mysterious Haganezuka." }
+          { episode: 2, title: "Trainer Sakonji Urokodaki", summary: "Tanjiro meets Giyu Tomioka and begins training under Sakonji Urokodaki." }
         ]
       }
     ],
@@ -56,21 +51,10 @@ export const animeDatabase = {
         title: "Attack on Titan",
         episodes: 25,
         description: "Eren Yeager vows to exterminate the Titans after they destroy his hometown.",
-        trailer: "https://www.youtube.com/embed/LV-nazLVjO0",
         episodesList: [
           { episode: 1, title: "To You, 2,000 Years From Now", summary: "The Colossal Titan appears and breaches the outer wall." },
-          { episode: 2, title: "That Day", summary: "Eren witnesses his mother being eaten by a Titan." },
-          { episode: 3, title: "A Dim Light Amid Despair", summary: "Eren joins the military with Mikasa and Armin." }
+          { episode: 2, title: "That Day", summary: "Eren witnesses his mother being eaten by a Titan." }
         ]
-      }
-    ],
-    movies: [
-      {
-        title: "Attack on Titan: Crimson Bow and Arrow",
-        image: "https://cdn.myanimelist.net/images/anime/6/63371.jpg",
-        description: "Compilation film of the first season.",
-        summary: "A compilation of the first 13 episodes of the anime series.",
-        trailer: "https://www.youtube.com/embed/6oeKUm-Ju1A"
       }
     ]
   },
@@ -92,25 +76,13 @@ export const animeDatabase = {
         title: "Naruto",
         episodes: 57,
         description: "Naruto graduates from the Ninja Academy and forms Team 7.",
-        trailer: "https://www.youtube.com/embed/-G9BqkgZXRA",
         episodesList: [
-          { episode: 1, title: "Enter: Naruto Uzumaki!", summary: "Naruto graduates and meets his teacher Kakashi." },
-          { episode: 2, title: "My Name is Konohamaru!", summary: "Naruto meets the Third Hokage's grandson." }
+          { episode: 1, title: "Enter: Naruto Uzumaki!", summary: "Naruto graduates and meets his teacher Kakashi." }
         ]
-      }
-    ],
-    movies: [
-      {
-        title: "Naruto the Movie: Ninja Clash in the Land of Snow",
-        image: "https://cdn.myanimelist.net/images/anime/10/75808.jpg",
-        description: "Naruto protects a famous actress during a film shoot.",
-        summary: "Team 7 is assigned to protect actress Fujikaze Yukie.",
-        trailer: "https://www.youtube.com/embed/7KQWrAYC5_c"
       }
     ]
   },
 
-  // Continuing with 997 more anime entries...
   "one-piece": {
     id: "one-piece",
     title: "One Piece",
@@ -120,10 +92,7 @@ export const animeDatabase = {
     episodes: 1100,
     status: "Currently Airing",
     year: 1999,
-    genres: ["Action", "Adventure", "Comedy"],
-    trailer: "https://www.youtube.com/embed/S8_YwFLCh4U",
-    seasons: [{ seasonNumber: 1, title: "East Blue Saga", episodes: 61, description: "Luffy begins his journey.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Comedy"]
   },
 
   "my-hero-academia": {
@@ -135,10 +104,7 @@ export const animeDatabase = {
     episodes: 113,
     status: "Currently Airing",
     year: 2016,
-    genres: ["Action", "Comedy", "Superhero"],
-    trailer: "https://www.youtube.com/embed/w1xO7KqHRnw",
-    seasons: [{ seasonNumber: 1, title: "My Hero Academia", episodes: 13, description: "Izuku inherits One For All.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Comedy", "Superhero"]
   },
 
   "death-note": {
@@ -150,10 +116,7 @@ export const animeDatabase = {
     episodes: 37,
     status: "Finished Airing",
     year: 2006,
-    genres: ["Mystery", "Psychological", "Thriller"],
-    trailer: "https://www.youtube.com/embed/NlJZ-YgAt-c",
-    seasons: [{ seasonNumber: 1, title: "Death Note", episodes: 37, description: "Light begins his reign as Kira.", episodesList: [] }],
-    movies: []
+    genres: ["Mystery", "Psychological", "Thriller"]
   },
 
   "dragon-ball-z": {
@@ -165,10 +128,7 @@ export const animeDatabase = {
     episodes: 291,
     status: "Finished Airing",
     year: 1989,
-    genres: ["Action", "Adventure", "Fantasy"],
-    trailer: "https://www.youtube.com/embed/B7lgCzt9f7k",
-    seasons: [{ seasonNumber: 1, title: "Saiyan Saga", episodes: 35, description: "Goku discovers he is a Saiyan.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Fantasy"]
   },
 
   "fullmetal-alchemist": {
@@ -180,10 +140,7 @@ export const animeDatabase = {
     episodes: 64,
     status: "Finished Airing",
     year: 2009,
-    genres: ["Action", "Adventure", "Drama"],
-    trailer: "https://www.youtube.com/embed/2FA0eM3F_7E",
-    seasons: [{ seasonNumber: 1, title: "Brotherhood", episodes: 64, description: "Edward and Alphonse search for the Stone.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Drama"]
   },
 
   "tokyo-ghoul": {
@@ -195,10 +152,7 @@ export const animeDatabase = {
     episodes: 12,
     status: "Finished Airing",
     year: 2014,
-    genres: ["Action", "Horror", "Psychological"],
-    trailer: "https://www.youtube.com/embed/v1P7K1S7o8I",
-    seasons: [{ seasonNumber: 1, title: "Tokyo Ghoul", episodes: 12, description: "Ken Kaneki becomes a half-ghoul.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Horror", "Psychological"]
   },
 
   "jujutsu-kaisen": {
@@ -210,10 +164,7 @@ export const animeDatabase = {
     episodes: 24,
     status: "Finished Airing",
     year: 2020,
-    genres: ["Action", "Fantasy", "Supernatural"],
-    trailer: "https://www.youtube.com/embed/pkKu9hLT-t8",
-    seasons: [{ seasonNumber: 1, title: "Jujutsu Kaisen", episodes: 24, description: "Yuji becomes a Jujutsu sorcerer.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Fantasy", "Supernatural"]
   },
 
   "bleach": {
@@ -225,10 +176,7 @@ export const animeDatabase = {
     episodes: 366,
     status: "Finished Airing",
     year: 2004,
-    genres: ["Action", "Adventure", "Supernatural"],
-    trailer: "https://www.youtube.com/embed/6cs3aMM_1q8",
-    seasons: [{ seasonNumber: 1, title: "Agent of the Soul Reaper", episodes: 20, description: "Ichigo becomes a Soul Reaper.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Supernatural"]
   },
 
   "fairy-tail": {
@@ -240,10 +188,7 @@ export const animeDatabase = {
     episodes: 328,
     status: "Finished Airing",
     year: 2009,
-    genres: ["Action", "Adventure", "Fantasy"],
-    trailer: "https://www.youtube.com/embed/atxYe-nsXg8",
-    seasons: [{ seasonNumber: 1, title: "Fairy Tail", episodes: 48, description: "Lucy joins Fairy Tail guild.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Fantasy"]
   },
 
   "sword-art-online": {
@@ -255,10 +200,7 @@ export const animeDatabase = {
     episodes: 25,
     status: "Finished Airing",
     year: 2012,
-    genres: ["Action", "Adventure", "Fantasy"],
-    trailer: "https://www.youtube.com/embed/6ohYYtxfDCg",
-    seasons: [{ seasonNumber: 1, title: "Aincrad", episodes: 14, description: "Players get trapped in SAO.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Fantasy"]
   },
 
   "hunter-x-hunter": {
@@ -270,10 +212,7 @@ export const animeDatabase = {
     episodes: 148,
     status: "Finished Airing",
     year: 2011,
-    genres: ["Action", "Adventure", "Fantasy"],
-    trailer: "https://www.youtube.com/embed/d6kBeJjTGnY",
-    seasons: [{ seasonNumber: 1, title: "Hunter Exam", episodes: 21, description: "Gon takes the Hunter Exam.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Adventure", "Fantasy"]
   },
 
   "one-punch-man": {
@@ -285,17 +224,71 @@ export const animeDatabase = {
     episodes: 12,
     status: "Finished Airing",
     year: 2015,
-    genres: ["Action", "Comedy", "Superhero"],
-    trailer: "https://www.youtube.com/embed/Poo5lqoWSGw",
-    seasons: [{ seasonNumber: 1, title: "One-Punch Man", episodes: 12, description: "Saitama seeks worthy opponents.", episodesList: [] }],
-    movies: []
+    genres: ["Action", "Comedy", "Superhero"]
   },
 
-  // Continuing with 985 more entries...
-  // [Note: In the actual implementation, I would include all 1000+ entries]
+  "your-lie-in-april": {
+    id: "your-lie-in-april",
+    title: "Your Lie in April",
+    image: "https://cdn.myanimelist.net/images/anime/3/67077.jpg",
+    description: "A piano prodigy rediscovers his passion for music through a violinist.",
+    type: "TV",
+    episodes: 22,
+    status: "Finished Airing",
+    year: 2014,
+    genres: ["Drama", "Music", "Romance"]
+  },
+
+  "attack-on-titan-final": {
+    id: "attack-on-titan-final",
+    title: "Attack on Titan: The Final Season",
+    image: "https://cdn.myanimelist.net/images/anime/1000/110531.jpg",
+    description: "The epic conclusion to the Attack on Titan saga.",
+    type: "TV",
+    episodes: 28,
+    status: "Finished Airing",
+    year: 2020,
+    genres: ["Action", "Drama", "Fantasy"]
+  },
+
+  "chainsaw-man": {
+    id: "chainsaw-man",
+    title: "Chainsaw Man",
+    image: "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
+    description: "A young man gains the ability to transform parts of his body into chainsaws.",
+    type: "TV",
+    episodes: 12,
+    status: "Finished Airing",
+    year: 2022,
+    genres: ["Action", "Fantasy", "Horror"]
+  },
+
+  "spy-x-family": {
+    id: "spy-x-family",
+    title: "Spy x Family",
+    image: "https://cdn.myanimelist.net/images/anime/1441/122795.jpg",
+    description: "A spy builds a fake family for a mission, not knowing his daughter is a telepath and wife an assassin.",
+    type: "TV",
+    episodes: 25,
+    status: "Currently Airing",
+    year: 2022,
+    genres: ["Action", "Comedy", "Slice of Life"]
+  },
+
+  "vinland-saga": {
+    id: "vinland-saga",
+    title: "Vinland Saga",
+    image: "https://cdn.myanimelist.net/images/anime/1500/103005.jpg",
+    description: "A young Viking boy seeks revenge for his father's death.",
+    type: "TV",
+    episodes: 24,
+    status: "Finished Airing",
+    year: 2019,
+    genres: ["Action", "Adventure", "Drama"]
+  }
 };
 
-// Export helper functions
+// Helper functions
 export function getAllAnimes() {
   return Object.values(animeDatabase);
 }
@@ -308,7 +301,7 @@ export function searchAnimes(query) {
   const lowerQuery = query.toLowerCase();
   return Object.values(animeDatabase).filter(anime => 
     anime.title.toLowerCase().includes(lowerQuery) ||
-    anime.genres.some(genre => genre.toLowerCase().includes(lowerQuery)) ||
-    anime.description.toLowerCase().includes(lowerQuery)
+    (anime.genres && anime.genres.some(genre => genre.toLowerCase().includes(lowerQuery))) ||
+    (anime.description && anime.description.toLowerCase().includes(lowerQuery))
   );
 }

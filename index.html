@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AnimeVerse - 1000+ Animes</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3297/3297956.png">
 </head>
 <body>
   <!-- Auth Modal -->
-  <div id="authModal" class="modal hidden">
+  <div id="authModal" class="modal">
     <div class="modal-content">
       <h2>Welcome to AnimeVerse!</h2>
       <p>Discover 1000+ animes with detailed information</p>
@@ -30,19 +29,19 @@
     <div class="header-left">
       <h1 class="logo">AnimeVerse</h1>
       <nav>
-        <button class="nav-btn active" data-page="home">Home</button>
-        <button class="nav-btn" data-page="chat">Global Chat</button>
-        <button class="nav-btn" data-page="movies">Movies</button>
-        <button class="nav-btn" data-page="rules">Rules</button>
+        <button class="nav-btn active" onclick="showPage('home')">Home</button>
+        <button class="nav-btn" onclick="showPage('chat')">Global Chat</button>
+        <button class="nav-btn" onclick="showPage('movies')">Movies</button>
+        <button class="nav-btn" onclick="showPage('rules')">Rules</button>
       </nav>
     </div>
     
     <div class="header-right">
       <div class="search-container">
-        <input type="text" id="search" placeholder="Search 1000+ animes...">
+        <input type="text" id="searchInput" placeholder="Search 1000+ animes...">
         <button id="searchBtn">🔍</button>
       </div>
-      <div id="userSection">
+      <div id="userSection" class="hidden">
         <span id="userWelcome"></span>
         <button id="logoutBtn">Logout</button>
       </div>
@@ -74,13 +73,6 @@
     <section id="animeDetailPage" class="page hidden">
       <div id="animeDetail">
         <!-- Detailed anime info appears here dynamically -->
-      </div>
-    </section>
-
-    <!-- Episode Detail Page -->
-    <section id="episodeDetailPage" class="page hidden">
-      <div id="episodeDetail">
-        <!-- Episode details appear here dynamically -->
       </div>
     </section>
 
@@ -117,21 +109,22 @@
         <div class="rules-list">
           <div class="rule-item">
             <h3>🚫 No Spoilers</h3>
-            <p>Don't spoil new episodes for others. Use spoiler tags when discussing recent content.</p>
+            <p>Don't spoil new episodes for others.</p>
           </div>
           <div class="rule-item">
             <h3>✅ Be Respectful</h3>
-            <p>Respect all members and their opinions. No harassment or hate speech.</p>
+            <p>Respect all members and their opinions.</p>
           </div>
           <div class="rule-item">
             <h3>🎮 Keep it Fun</h3>
-            <p>This is a community for anime lovers. Keep discussions positive and engaging.</p>
+            <p>This is a community for anime lovers.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <script src="animeDatabase.js"></script>
   <script type="module" src="script.js"></script>
 </body>
 </html>
