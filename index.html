@@ -1,130 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnimeVerse - 1000+ Animes</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeHub - 1000+ Animes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Auth Modal -->
-  <div id="authModal" class="modal">
-    <div class="modal-content">
-      <h2>Welcome to AnimeVerse!</h2>
-      <p>Discover 1000+ animes with detailed information</p>
-      <button id="googleLoginBtn">Sign in with Google</button>
-    </div>
-  </div>
-
-  <!-- Username Modal -->
-  <div id="usernameModal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Choose Your Username</h2>
-      <input type="text" id="usernameInput" placeholder="Enter your username" maxlength="20">
-      <button id="setUsernameBtn">Continue</button>
-    </div>
-  </div>
-
-  <header>
-    <div class="header-left">
-      <h1 class="logo">AnimeVerse</h1>
-      <nav>
-        <button class="nav-btn active" onclick="showPage('home')">Home</button>
-        <button class="nav-btn" onclick="showPage('chat')">Global Chat</button>
-        <button class="nav-btn" onclick="showPage('movies')">Movies</button>
-        <button class="nav-btn" onclick="showPage('rules')">Rules</button>
-      </nav>
-    </div>
-    
-    <div class="header-right">
-      <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search 1000+ animes...">
-        <button id="searchBtn">🔍</button>
-      </div>
-      <div id="userSection" class="hidden">
-        <span id="userWelcome"></span>
-        <button id="logoutBtn">Logout</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Home Page -->
-    <section id="homePage" class="page active">
-      <div class="hero-section">
-        <h2>Discover 1000+ Animes</h2>
-        <p>Complete database with seasons, episodes, movies, and summaries</p>
-        <div class="stats">
-          <span>🎬 1000+ Animes</span>
-          <span>📺 50,000+ Episodes</span>
-          <span>🎥 500+ Movies</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>🎬 AnimeHub</h1>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="🔍 Search 1000+ animes...">
+            </div>
+            <div class="nav-links">
+                <button class="nav-link active" data-tab="home">🏠 Home</button>
+                <button class="nav-link" data-tab="browse">📚 Browse</button>
+                <button class="nav-link" data-tab="movies">🎥 Movies</button>
+                <button class="nav-link" data-tab="chat">💬 Chat</button>
+                <button class="nav-link" data-tab="trending">🔥 Trending</button>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <div class="anime-grid-container">
-        <h3>Popular Animes</h3>
-        <div id="animeList" class="anime-grid">
-          <!-- Anime cards appear here dynamically -->
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Tab -->
+        <section id="home" class="tab-content active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Discover 1000+ Animes</h1>
+                    <p>Explore the ultimate anime database with detailed information, episode guides, and community discussions</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Animes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Episodes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Movies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-section">
+                <h2>🔥 Popular This Week</h2>
+                <div id="featuredAnime" class="anime-grid">
+                    <!-- Featured anime will load here -->
+                </div>
+            </div>
+
+            <div class="categories-section">
+                <h2>🎭 Browse Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-genre="action">
+                        <h3>⚔️ Action</h3>
+                        <p>250+ animes</p>
+                    </div>
+                    <div class="category-card" data-genre="fantasy">
+                        <h3>🔮 Fantasy</h3>
+                        <p>180+ animes</p>
+                    </div>
+                    <div class="category-card" data-genre="romance">
+                        <h3>💖 Romance</h3>
+                        <p>120+ animes</p>
+                    </div>
+                    <div class="category-card" data-genre="comedy">
+                        <h3>😂 Comedy</h3>
+                        <p>150+ animes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Browse Tab -->
+        <section id="browse" class="tab-content">
+            <div class="browse-header">
+                <h1>📚 All Animes</h1>
+                <div class="filter-controls">
+                    <select id="genreFilter">
+                        <option value="">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="romance">Romance</option>
+                        <option value="comedy">Comedy</option>
+                    </select>
+                    <select id="yearFilter">
+                        <option value="">All Years</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+            </div>
+            <div id="browseAnime" class="anime-grid">
+                <!-- All anime will load here -->
+            </div>
+        </section>
+
+        <!-- Movies Tab -->
+        <section id="movies" class="tab-content">
+            <div class="movies-header">
+                <h1>🎥 Anime Movies</h1>
+                <p>Collection of 500+ anime movies</p>
+            </div>
+            <div id="moviesList" class="movies-grid">
+                <!-- Movies will load here -->
+            </div>
+        </section>
+
+        <!-- Chat Tab -->
+        <section id="chat" class="tab-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h1>💬 Global Chat</h1>
+                    <div class="online-users">
+                        <span>🟢 128 users online</span>
+                    </div>
+                </div>
+                <div class="chat-rules">
+                    <p>🚫 No spoilers • ✅ Be respectful • 🎮 Have fun!</p>
+                </div>
+                <div id="chatMessages" class="chat-messages">
+                    <div class="welcome-message">
+                        <p>Welcome to AnimeHub Chat! Start discussing your favorite animes with the community.</p>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button id="sendMessage">Send</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Tab -->
+        <section id="trending" class="tab-content">
+            <div class="trending-header">
+                <h1>🔥 Trending Now</h1>
+                <p>Most discussed animes this week</p>
+            </div>
+            <div id="trendingAnime" class="trending-grid">
+                <!-- Trending anime will load here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Anime Detail Modal -->
+    <div id="animeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="animeDetail">
+                <!-- Anime details will load here -->
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- Anime Detail Page -->
-    <section id="animeDetailPage" class="page hidden">
-      <div id="animeDetail">
-        <!-- Detailed anime info appears here dynamically -->
-      </div>
-    </section>
-
-    <!-- Chat Page -->
-    <section id="chatPage" class="page hidden">
-      <div class="chat-container">
-        <h2>Global Chat</h2>
-        <div class="chat-rules">
-          <p>🚫 No spoilers | ✅ Be respectful | 🎮 Have fun!</p>
-        </div>
-        <div id="messages" class="messages-container"></div>
-        <form id="messageForm" class="message-form">
-          <input type="text" id="messageInput" placeholder="Type your message..." required>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Movies Page -->
-    <section id="moviesPage" class="page hidden">
-      <div class="hero-section">
-        <h2>Anime Movies Collection</h2>
-        <p>500+ movies from your favorite anime series</p>
-      </div>
-      <div id="moviesList" class="movies-grid">
-        <!-- Movies appear here dynamically -->
-      </div>
-    </section>
-
-    <!-- Rules Page -->
-    <section id="rulesPage" class="page hidden">
-      <div class="rules-container">
-        <h2>Community Rules</h2>
-        <div class="rules-list">
-          <div class="rule-item">
-            <h3>🚫 No Spoilers</h3>
-            <p>Don't spoil new episodes for others.</p>
-          </div>
-          <div class="rule-item">
-            <h3>✅ Be Respectful</h3>
-            <p>Respect all members and their opinions.</p>
-          </div>
-          <div class="rule-item">
-            <h3>🎮 Keep it Fun</h3>
-            <p>This is a community for anime lovers.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="animeDatabase.js"></script>
-  <script type="module" src="script.js"></script>
+    <script src="animeData.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
